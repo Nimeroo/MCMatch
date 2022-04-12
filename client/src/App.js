@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { gameItems } from "./Util/gameItems";
-import { gameConfig } from "./Util/gamegenerator";
+import { gameConfig } from "./Util/gameGenerator";
 import { GameTitle } from "./Components/GameTitle/GameTitle";
 import { GameGrid } from "./Components/GameGrid/GameGrid";
 import { DifficultySelector } from "./Components/DifficultySelector/DifficultySelector";
