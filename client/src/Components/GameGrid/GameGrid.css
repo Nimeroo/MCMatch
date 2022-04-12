@@ -1,0 +1,20 @@
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  width: 70%;
+  height: 70%;
+}
+
+.item-container {
+  height: 3em;
+  width: 3em;
+  border: 1px solid black;
+}
+
+.item-image {
+  height: 2em;
+  width: 2em;
+}
+/*# sourceMappingURL=GameGrid.css.map */
