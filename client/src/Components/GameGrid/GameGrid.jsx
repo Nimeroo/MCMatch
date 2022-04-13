@@ -26,9 +26,11 @@ export const GameGrid = ({
         setSelections([]);
       }
     }
-    list.every((item) => item.isMatched === true)
-      ? setGameCondition("complete")
-      : null;
+    if (list.every((item) => item.isMatched === true)) {
+      setGameCondition("complete");
+    } else {
+      return;
+    }
   };
 
   useEffect(() => {
@@ -44,7 +46,7 @@ export const GameGrid = ({
             className="item-container"
             onClick={() => {
               if (item.isMatched) {
-                return null;
+                return;
               } else {
                 matchChecker(item, gridItems);
               }
