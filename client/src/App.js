@@ -11,6 +11,7 @@ function App() {
   const [difficulty, setDifficulty] = useState("easy");
   const [gameState, setGameState] = useState("off");
   const [itemList, setItemList] = useState([]);
+  const [gameMoves, setGameMoves] = useState(0)
 
   const fetchItems = async () => {
     const items = await gameConfig(gameItems, difficulty);
@@ -40,7 +41,7 @@ function App() {
     <div>
       <div><GameTimer gameState={gameState}/></div>
       <div>
-        <GameGrid difficulty={difficulty} itemList={itemList} />
+        <GameGrid difficulty={difficulty} itemList={itemList} setGameMoves={setGameMoves} gameMoves={gameMoves}/>
       </div>
       <button onClick={() => setGameState("off")}>Exit Game</button>
     </div>
