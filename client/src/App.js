@@ -10,6 +10,7 @@ import { DifficultySelector } from "./Components/DifficultySelector/DifficultySe
 function App() {
   const [difficulty, setDifficulty] = useState("easy");
   const [gameState, setGameState] = useState("off");
+  const [gameCondition, setGameCondition] = useState("incomplete")
   const [itemList, setItemList] = useState([]);
   const [gameMoves, setGameMoves] = useState(0)
 
@@ -41,7 +42,7 @@ function App() {
     <div>
       <div><GameTimer gameState={gameState}/></div>
       <div>
-        <GameGrid difficulty={difficulty} itemList={itemList} setGameMoves={setGameMoves} gameMoves={gameMoves}/>
+        <GameGrid difficulty={difficulty} itemList={itemList} setGameMoves={setGameMoves} gameMoves={gameMoves} setGameCondition={setGameCondition}/>
       </div>
       <button onClick={() => setGameState("off")}>Exit Game</button>
     </div>

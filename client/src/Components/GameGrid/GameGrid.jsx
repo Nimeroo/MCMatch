@@ -1,7 +1,12 @@
 import "./GameGrid.css";
 import React, { useEffect, useState } from "react";
 
-export const GameGrid = ({ itemList, setGameMoves, gameMoves }) => {
+export const GameGrid = ({
+  itemList,
+  setGameMoves,
+  gameMoves,
+  setGameCondition,
+}) => {
   const [gridItems, setGridItems] = useState([]);
   const [selections, setSelections] = useState([]);
 
@@ -14,18 +19,21 @@ export const GameGrid = ({ itemList, setGameMoves, gameMoves }) => {
       if (selections[0].name === selections[1].name) {
         item.isMatched = true;
         list[list.indexOf(selections[0])].isMatched = true;
-        setGameMoves(gameMoves + 1)
+        setGameMoves(gameMoves + 1);
         setSelections([]);
       } else {
-        setGameMoves(gameMoves + 1)
+        setGameMoves(gameMoves + 1);
         setSelections([]);
       }
     }
+    list.every((item) => item.isMatched === true)
+      ? setGameCondition("complete")
+      : null;
   };
 
   useEffect(() => {
     const setItems = () => setGridItems(itemList);
-    setItems()
+    setItems();
   }, [itemList]);
 
   return (
