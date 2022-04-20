@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-export const GameTimer = ({ gameState }) => {
+export const GameTimer = ({ gameState, setGameTime }) => {
   let [seconds, setSeconds] = useState("00");
   let [minutes, setMinutes] = useState("00");
-  let totalSeconds = 0;
-  
+  let [totalSeconds, setTotalSeconds] = useState(0);
+  let timer;
+
   const setTimer = () => {
-    ++totalSeconds;
+    setTotalSeconds(++totalSeconds);
     setSeconds(timeFormater(totalSeconds % 60));
     setMinutes(timeFormater(parseInt(totalSeconds / 60)));
-  }
-  
+  };
+
   const timeFormater = (time) => {
     const timeString = time + "";
     if (timeString.length < 2) {
@@ -18,16 +19,23 @@ export const GameTimer = ({ gameState }) => {
     } else {
       return timeString;
     }
-  }
+  };
+
   useEffect(() => {
     const startTimer = () => {
-      if (gameState === "running") setInterval(setTimer, 1000);
+      if (gameState === "running" && !timer) {
+        timer = setInterval(setTimer, 1000);
+      } else if (gameState === "off" && timer) {
+        clearInterval(timer);
+      }
+      setGameTime(minutes + ":" + seconds);
     };
     startTimer();
-  }, [gameState]);
+  }, [gameState, totalSeconds]);
 
   return (
     <div>
+      <h5>Time:</h5>
       <div>{minutes}:</div>
       <div>{seconds}</div>
     </div>
