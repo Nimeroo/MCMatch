@@ -13,6 +13,7 @@ function App() {
   const [gameCondition, setGameCondition] = useState("incomplete")
   const [itemList, setItemList] = useState([]);
   const [gameMoves, setGameMoves] = useState(0)
+  const [gameTime, setGameTime] = useState("")
 
   const fetchItems = async () => {
     const items = await gameConfig(gameItems, difficulty);
@@ -40,7 +41,7 @@ function App() {
   // In-game screen //
   const inGame = (
     <div>
-      <div><GameTimer gameState={gameState}/></div>
+      <div><GameTimer gameState={gameState} setGameTime={setGameTime} gameCondition={gameCondition}/></div>
       <div>
         <GameGrid difficulty={difficulty} itemList={itemList} setGameMoves={setGameMoves} gameMoves={gameMoves} setGameCondition={setGameCondition}/>
       </div>
