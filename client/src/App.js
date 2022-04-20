@@ -5,15 +5,16 @@ import { gameConfig } from "./Util/gameGenerator";
 import { GameTitle } from "./Components/GameTitle/GameTitle";
 import { GameTimer } from "./Components/GameTimer/GameTimer";
 import { GameGrid } from "./Components/GameGrid/GameGrid";
+import { GameResults } from "./Components/GameResults/GameResults";
 import { DifficultySelector } from "./Components/DifficultySelector/DifficultySelector";
 
 function App() {
   const [difficulty, setDifficulty] = useState("easy");
   const [gameState, setGameState] = useState("off");
-  const [gameCondition, setGameCondition] = useState("incomplete")
+  const [gameCondition, setGameCondition] = useState("incomplete");
   const [itemList, setItemList] = useState([]);
-  const [gameMoves, setGameMoves] = useState(0)
-  const [gameTime, setGameTime] = useState("")
+  const [gameMoves, setGameMoves] = useState(0);
+  const [gameTime, setGameTime] = useState("");
 
   const fetchItems = async () => {
     const items = await gameConfig(gameItems, difficulty);
@@ -23,12 +24,15 @@ function App() {
   // Pre-game screen //
   const preGame = (
     <div>
-      <DifficultySelector setDifficulty={setDifficulty} fetchItems={fetchItems} />
+      <DifficultySelector
+        setDifficulty={setDifficulty}
+        fetchItems={fetchItems}
+      />
       <div>
         <button
           onClick={() => {
             setGameState("running");
-            fetchItems(); 
+            fetchItems();
           }}
         >
           Start Game
@@ -41,11 +45,36 @@ function App() {
   // In-game screen //
   const inGame = (
     <div>
-      <div><GameTimer gameState={gameState} setGameTime={setGameTime} gameCondition={gameCondition}/></div>
       <div>
-        <GameGrid difficulty={difficulty} itemList={itemList} setGameMoves={setGameMoves} gameMoves={gameMoves} setGameCondition={setGameCondition}/>
+        <GameTimer
+          gameState={gameState}
+          setGameTime={setGameTime}
+          gameCondition={gameCondition}
+        />
+      </div>
+      <div>
+        <GameGrid
+          difficulty={difficulty}
+          itemList={itemList}
+          setGameMoves={setGameMoves}
+          gameMoves={gameMoves}
+          setGameCondition={setGameCondition}
+          setGameState={setGameState}
+        />
       </div>
       <button onClick={() => setGameState("off")}>Exit Game</button>
+    </div>
+  );
+
+  const postGame = (
+    <div>
+      <GameResults
+        gameMoves={gameMoves}
+        setGameState={setGameState}
+        gameTime={gameTime}
+        setGameCondition={setGameCondition}
+        fetchItems={fetchItems}
+      />
     </div>
   );
 
@@ -54,6 +83,8 @@ function App() {
       return preGame;
     } else if (gameState === "running") {
       return inGame;
+    } else if (gameState === "results") {
+      return postGame;
     }
   };
 
