@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const GameTimer = ({ gameState, setGameTime }) => {
+export const GameTimer = ({ gameState, setGameTime, gameCondition }) => {
   let [seconds, setSeconds] = useState("00");
   let [minutes, setMinutes] = useState("00");
   let [totalSeconds, setTotalSeconds] = useState(0);
@@ -25,7 +25,10 @@ export const GameTimer = ({ gameState, setGameTime }) => {
     const startTimer = () => {
       if (gameState === "running" && !timer) {
         timer = setInterval(setTimer, 1000);
-      } else if (gameState === "off" && timer) {
+      } else if (
+        (gameState === "off" || gameCondition === "complete") &&
+        timer
+      ) {
         clearInterval(timer);
       }
       setGameTime(minutes + ":" + seconds);
