@@ -6,6 +6,7 @@ export const GameGrid = ({
   setGameMoves,
   gameMoves,
   setGameCondition,
+  setGameState,
 }) => {
   const [gridItems, setGridItems] = useState([]);
   const [selections, setSelections] = useState([]);
@@ -28,10 +29,16 @@ export const GameGrid = ({
     }
     if (list.every((item) => item.isMatched === true)) {
       setGameCondition("complete");
+      setGameState("results");
     } else {
       return;
     }
   };
+
+  useEffect(() => {
+    setGameCondition("incomplete");
+    setGameMoves(0)
+  }, []);
 
   useEffect(() => {
     const setItems = () => setGridItems(itemList);
