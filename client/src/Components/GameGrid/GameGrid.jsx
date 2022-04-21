@@ -43,8 +43,7 @@ export const GameGrid = ({
   }, []);
 
   useEffect(() => {
-    const setItems = () => setGridItems(itemList);
-    setItems();
+    setGridItems(itemList);
   }, [itemList]);
 
   return (
