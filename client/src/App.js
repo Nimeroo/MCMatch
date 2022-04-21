@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { gameItems } from "./Util/gameItems";
 import { gameConfig } from "./Util/gameGenerator";
+import { sessionSave } from "./Util/sessionSave";
 import { GameTitle } from "./Components/GameTitle/GameTitle";
 import { GameTimer } from "./Components/GameTimer/GameTimer";
 import { GameGrid } from "./Components/GameGrid/GameGrid";
@@ -16,9 +17,19 @@ function App() {
   const [gameMoves, setGameMoves] = useState(0);
   const [gameTime, setGameTime] = useState("");
 
-  const fetchItems = async () => {
-    const items = await gameConfig(gameItems, difficulty);
+  const fetchItems = () => {
+    const items = gameConfig(gameItems, difficulty);
     setItemList(items);
+  };
+
+  // Saves game data inside of an object upon finding all matches //
+  const newSession = () => {
+    const session = {
+      difficulty: difficulty,
+      time: gameTime,
+      moves: gameMoves,
+    };
+    sessionSave(session);
   };
 
   // Pre-game screen //
@@ -60,12 +71,14 @@ function App() {
           gameMoves={gameMoves}
           setGameCondition={setGameCondition}
           setGameState={setGameState}
+          newSession={newSession}
         />
       </div>
       <button onClick={() => setGameState("off")}>Exit Game</button>
     </div>
   );
 
+  // Post-game screen //
   const postGame = (
     <div>
       <GameResults
