@@ -7,6 +7,7 @@ export const GameGrid = ({
   gameMoves,
   setGameCondition,
   setGameState,
+  newSession,
 }) => {
   const [gridItems, setGridItems] = useState([]);
   const [selections, setSelections] = useState([]);
@@ -29,6 +30,7 @@ export const GameGrid = ({
     }
     if (list.every((item) => item.isMatched === true)) {
       setGameCondition("complete");
+      newSession()
       setGameState("results");
     } else {
       return;
