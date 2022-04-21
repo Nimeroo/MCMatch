@@ -8,9 +8,10 @@ import { GameTimer } from "./Components/GameTimer/GameTimer";
 import { GameGrid } from "./Components/GameGrid/GameGrid";
 import { GameResults } from "./Components/GameResults/GameResults";
 import { DifficultySelector } from "./Components/DifficultySelector/DifficultySelector";
+import { GameLeaderboard } from "./Components/GameLeaderboard/GameLeaderboard";
 
 function App() {
-  const [difficulty, setDifficulty] = useState("easy");
+  const [difficulty, setDifficulty] = useState("Easy");
   const [gameState, setGameState] = useState("off");
   const [gameCondition, setGameCondition] = useState("incomplete");
   const [itemList, setItemList] = useState([]);
@@ -48,7 +49,7 @@ function App() {
         >
           Start Game
         </button>
-        <button>Records</button>
+        <button onClick={() => setGameState("records")}>Records</button>
       </div>
     </div>
   );
@@ -91,6 +92,13 @@ function App() {
     </div>
   );
 
+  const leaderboard = (
+    <div>
+      <GameLeaderboard setGameState={setGameState} />
+      <button onClick={() => setGameState("off")}>Go back</button>
+    </div>
+  );
+
   const gameStatus = () => {
     if (gameState === "off") {
       return preGame;
@@ -98,6 +106,8 @@ function App() {
       return inGame;
     } else if (gameState === "results") {
       return postGame;
+    } else if (gameState === "records") {
+      return leaderboard;
     }
   };
 
