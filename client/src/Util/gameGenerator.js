@@ -55,11 +55,11 @@ export const gameConfig = (itemArray, difficulty) => {
     return hardArray;
   };
 
-  if (difficulty === "easy") {
+  if (difficulty === "Easy") {
     return shuffle(reset(duplicate(easyItems())));
-  } else if (difficulty === "intermediate") {
+  } else if (difficulty === "Intermediate") {
     return shuffle(reset(duplicate(intermediateItems())));
-  } else if (difficulty === "hard") {
+  } else if (difficulty === "Hard") {
     return shuffle(reset(duplicate(hardItems())));
   }
 };
