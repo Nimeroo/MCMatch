@@ -6,11 +6,13 @@ export const GameResults = ({
   gameTime,
   fetchItems,
 }) => {
+
+  // Changes win messege depending on how fast game completed //
   const timeSentence = () => {
     if (gameTime[0] && gameTime[1] === "0") {
       return `and only ${gameTime[3] + gameTime[4]} seconds!`;
     } else {
-      return `and in ${gameTime}`;
+      return `and ${gameTime}`;
     }
   };
 
