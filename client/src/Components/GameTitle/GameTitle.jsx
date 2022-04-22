@@ -3,6 +3,6 @@ import "./GameTitle.css"
 
 export const GameTitle = () => {
   return (
-    <div>McMatch</div>
+    <div id='title'>McMatch</div>
   )
 }
