@@ -1,21 +1,33 @@
-html{
-    height: 100%;
-    width: 100%;
+@font-face {
+  font-family: minecraft-evenings;
+  src: url(Assets/minecraft-evenings-font/MinecraftEvenings-RBao.ttf);
 }
 
-body{
-    height: 100%;
-    width: 100%;
+html {
+  height: 100%;
+  width: 100%;
 }
 
-#root{
-    height: 100%;
-    width: 100%;
+body {
+  height: 100%;
+  width: 100%;
 }
 
-.App{
-    height: 100%;
-    width: 100%;
-    background-color: lightblue;
-    background-image: url(/client/src/Assets/background-clouds.png);
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
+  background-image: url(Assets/background-clouds.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
