@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,IAAI,CAAJ,gCAAI;AAGJ,AAAA,MAAM,CAAA;EACF,SAAS,EAAE,KAAK;EAChB,WAAW,ECJF,kBAAkB;EDK3B,KAAK,EAAE,IAAI;EACX,WAAW,EAAE,uEACM;CACtB",
     "sources": [
-        "GameTitle.scss"
+        "GameTitle.scss",
+        "../../Util/_styleVariables.scss"
     ],
     "names": [],
     "file": "GameTitle.css"

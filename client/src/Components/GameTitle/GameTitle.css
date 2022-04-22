@@ -1,1 +1,8 @@
-/* No CSS *//*# sourceMappingURL=GameTitle.css.map */
+@use "../../Util/styleVariables" as *;
+#title {
+  font-size: 100px;
+  font-family: minecraft-evenings;
+  color: gray;
+  text-shadow: -1px 1px 0 black, 1px 1px 0 black, 1px -1px 0 black, -1px -1px 0 black;
+}
+/*# sourceMappingURL=GameTitle.css.map */
