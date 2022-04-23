@@ -39,8 +39,10 @@ export const GameTimer = ({ gameState, setGameTime, gameCondition }) => {
   return (
     <div>
       <h5>Time:</h5>
-      <div>{minutes}:</div>
-      <div>{seconds}</div>
+      <div>
+        <div>{minutes}:</div>
+        <div>{seconds}</div>
+      </div>
     </div>
   );
 };
