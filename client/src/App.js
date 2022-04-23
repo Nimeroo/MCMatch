@@ -64,6 +64,7 @@ function App() {
           setGameTime={setGameTime}
           gameCondition={gameCondition}
         />
+        <h5>Moves: {gameMoves}</h5>
       </div>
       <div>
         <GameGrid
