@@ -1,1 +1,218 @@
-/* No CSS *//*# sourceMappingURL=DifficultySelector.css.map */
+.difficulties {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25rem;
+  width: 90%;
+}
+
+.difficulties__card-easy {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15em;
+  height: 95%;
+  border: 5px ridge gray;
+  text-align: center;
+  background-image: url(../../Assets/dirt-block.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-easy--selected {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15em;
+  height: 95%;
+  border: 5px ridge gold;
+  text-align: center;
+  background-image: url(../../Assets/dirt-block.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-intermediate {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15em;
+  height: 95%;
+  border: 5px ridge gray;
+  text-align: center;
+  background-image: url(../../Assets/iron-block.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-easy--selected > div {
+  height: 9em;
+  width: 110%;
+  border: 1px solid gold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.difficulties__card-easy--selected > * > * {
+  font-size: 25px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.difficulties__card-intermediate--selected {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15em;
+  height: 95%;
+  border: 5px ridge gold;
+  text-align: center;
+  background-image: url(../../Assets/iron-block.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-intermediate--selected > div {
+  height: 9em;
+  width: 110%;
+  border: 1px solid gold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.difficulties__card-intermediate--selected > * > * {
+  font-size: 25px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.difficulties__card-hard {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15em;
+  height: 95%;
+  border: 5px ridge gray;
+  text-align: center;
+  background-image: url(../../Assets/obsidian-block.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-hard--selected {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15em;
+  height: 95%;
+  border: 5px ridge gold;
+  text-align: center;
+  background-image: url(../../Assets/obsidian-block.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-hard--selected > div {
+  height: 9em;
+  width: 110%;
+  border: 1px solid gold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.difficulties__card-hard--selected > * > * {
+  font-size: 25px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.difficulties__card__container {
+  height: 7.5em;
+  width: 90%;
+  border: 1px solid darkgray;
+  background-image: url(../../Assets/oak-plank-block.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card__title {
+  font-family: MC-font-bold;
+}
+
+.difficulties__card__note {
+  font-family: MC-font-italic;
+}
+/*# sourceMappingURL=DifficultySelector.css.map */
