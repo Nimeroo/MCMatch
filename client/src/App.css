@@ -30,6 +30,7 @@ body {
 
 button {
   height: 2.5em;
+  width: 8em;
   border: 2px outset #828282;
   background-color: #828282;
   font-family: MC-font;
@@ -106,5 +107,52 @@ button:hover {
   display: flex;
   margin-top: 3em;
   width: 20rem;
+}
+
+.in-game-block {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.in-game-block__heading {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+}
+
+.in-game-block__heading > * {
+  width: 5.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: MC-font;
+  font-size: 20px;
+  color: #794826;
+}
+
+.in-game-block__heading > * > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  color: #794826;
 }
 /*# sourceMappingURL=App.css.map */

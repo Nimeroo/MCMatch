@@ -57,8 +57,8 @@ function App() {
 
   // In-game screen //
   const inGame = (
-    <div>
-      <div>
+    <div className="in-game-block">
+      <div className="in-game-block__heading">
         <GameTimer
           gameState={gameState}
           setGameTime={setGameTime}
@@ -66,7 +66,7 @@ function App() {
         />
         <h5>Moves: {gameMoves}</h5>
       </div>
-      <div>
+      <div className="in-game-block__main">
         <GameGrid
           difficulty={difficulty}
           itemList={itemList}
