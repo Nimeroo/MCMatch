@@ -3,6 +3,21 @@
   src: url(Assets/minecraft-evenings-font/MinecraftEvenings-RBao.ttf);
 }
 
+@font-face {
+  font-family: MC-font;
+  src: url(Assets/MC-font/MinecraftRegular-Bmg3.otf);
+}
+
+@font-face {
+  font-family: MC-font-bold;
+  src: url(Assets/MC-font/MinecraftBold-nMK1.otf);
+}
+
+@font-face {
+  font-family: MC-font-italic;
+  src: url(Assets/MC-font/MinecraftItalic-R8Mo.otf);
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -38,5 +53,31 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.game-block {
+  height: inherit;
+  width: inherit;
+}
+
+.pre-game-block {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: inherit;
+  width: inherit;
+}
+
+.pre-game-block__heading {
+  opacity: 70%;
+  font-family: MC-font-bold;
+  color: whitesmoke;
 }
 /*# sourceMappingURL=App.css.map */
