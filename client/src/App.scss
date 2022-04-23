@@ -28,6 +28,19 @@ body {
   width: 100%;
 }
 
+button{
+    height: 2.5em;
+    border: 2px outset #828282;
+    background-color: #828282;
+    font-family: MC-font;
+    font-size: 15px;
+    color: white;
+}
+
+button:hover{
+    border: 2px inset #828282;
+}
+
 #root {
   height: 100%;
   width: 100%;
@@ -64,4 +77,12 @@ body {
     opacity: 70%;
     font-family: MC-font-bold;
     color: whitesmoke;
+}
+
+.pre-game-block__buttons{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-top: 3em;
+    width: 20rem;
 }
