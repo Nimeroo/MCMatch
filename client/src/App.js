@@ -35,12 +35,13 @@ function App() {
 
   // Pre-game screen //
   const preGame = (
-    <div>
+    <div className="pre-game-block">
+      <h1 className="pre-game-block__heading">Select a difficulty and start matching</h1>
       <DifficultySelector
         setDifficulty={setDifficulty}
-        fetchItems={fetchItems}
+        difficulty={difficulty}
       />
-      <div>
+      <div className="pre-game-block__buttons">
         <button
           onClick={() => {
             setGameState("running");
@@ -114,7 +115,7 @@ function App() {
   return (
     <div className="App">
       <GameTitle />
-      <div>{gameStatus()}</div>
+      <div className="game-block">{gameStatus()}</div>
     </div>
   );
 }
