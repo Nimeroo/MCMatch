@@ -1,5 +1,4 @@
-@use "../../Util/styleVariables" as *;
-#title {
+.title {
   font-size: 100px;
   font-family: minecraft-evenings;
   color: gray;
