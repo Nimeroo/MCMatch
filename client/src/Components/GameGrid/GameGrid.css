@@ -1,20 +1,73 @@
-.grid-container {
-  display: -ms-grid;
-  display: grid;
+.grid-block {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  width: 70%;
-  height: 70%;
+  justify-items: center;
+  display: -ms-grid;
+  display: grid;
+  border: 5px ridge gray;
+  margin-bottom: 2em;
 }
 
-.item-container {
-  height: 3em;
-  width: 3em;
-  border: 1px solid black;
+.grid-block:hover {
+  cursor: url("../../Assets/iron-shovel.png"), url("../../Assets/iron-shovel.cur"), auto;
 }
 
-.item-image {
-  height: 2em;
-  width: 2em;
+.grid-block__covered {
+  z-index: 1;
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  padding-top: 3px;
+  border: 1px solid #79563a;
+  background-image: url(../../Assets/grass-top.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.grid-block__covered:hover {
+  -webkit-filter: brightness(130%);
+          filter: brightness(130%);
+}
+
+.grid-block__uncovered {
+  z-index: -1;
+  position: absolute;
+}
+
+.grid-block__item {
+  height: 6em;
+  width: 6em;
+  padding-top: 3px;
+  background-image: url(../../Assets/stone-top.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.grid-block__item__image {
+  height: 5em;
+  width: 5em;
+  -webkit-animation: fade-in 3s linear;
+          animation: fade-in 3s linear;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=GameGrid.css.map */
