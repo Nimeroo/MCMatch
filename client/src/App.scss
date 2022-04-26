@@ -1,4 +1,4 @@
-@import "../../Util/styleVariables";
+@import "Util/styleVariables";
 
 @font-face {
   font-family: minecraft-evenings;
@@ -6,23 +6,24 @@
 }
 
 @font-face {
-    font-family: MC-font;
-    src: url(Assets/MC-font/MinecraftRegular-Bmg3.otf);
+  font-family: MC-font;
+  src: url(Assets/MC-font/MinecraftRegular-Bmg3.otf);
 }
 
 @font-face {
-    font-family: MC-font-bold;
-    src: url(Assets/MC-font/MinecraftBold-nMK1.otf);
+  font-family: MC-font-bold;
+  src: url(Assets/MC-font/MinecraftBold-nMK1.otf);
 }
 
 @font-face {
-    font-family: MC-font-italic;
-    src: url(Assets/MC-font/MinecraftItalic-R8Mo.otf);
+  font-family: MC-font-italic;
+  src: url(Assets/MC-font/MinecraftItalic-R8Mo.otf);
 }
 
 html {
   height: 100%;
   width: 100%;
+  background-color: #b0cbff;
 }
 
 body {
@@ -30,18 +31,19 @@ body {
   width: 100%;
 }
 
-button{
-    height: 2.5em;
-    width: 8em;
-    border: 2px outset #828282;
-    background-color: #828282;
-    font-family: MC-font;
-    font-size: 15px;
-    color: white;
+button {
+  height: 2.5em;
+  width: 8em;
+  margin-bottom: 2em;
+  border: 2px outset #828282;
+  background-color: #828282;
+  font-family: MC-font;
+  font-size: 15px;
+  color: white;
 }
 
-button:hover{
-    border: 2px inset #828282;
+button:hover {
+  border: 2px inset #828282;
 }
 
 #root {
@@ -50,7 +52,8 @@ button:hover{
 }
 
 .App {
-  justify-content: space-around;
+  padding-top: 1em;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   display: flex;
@@ -63,57 +66,64 @@ button:hover{
   background-size: cover;
 }
 
-.game-block{
-    height: inherit;
-    width: inherit;
+.game-block {
+  height: inherit;
+  width: inherit;
 }
 
-.pre-game-block{
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    height: inherit;
-    width: inherit;
+.pre-game-block {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  height: inherit;
+  width: inherit;
 }
 
-.pre-game-block__heading{
-    opacity: 70%;
-    font-family: MC-font-bold;
-    color: whitesmoke;
+.pre-game-block__heading {
+  opacity: 70%;
+  font-family: MC-font-bold;
+  color: whitesmoke;
 }
 
-.pre-game-block__buttons{
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    margin-top: 3em;
-    width: 20rem;
+.pre-game-block__buttons {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-top: 3em;
+  width: 20rem;
 }
 
-.in-game-block{
-    align-items: center;
-    flex-direction: column;
-    display: flex;
+.in-game-block {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
 }
 
-.in-game-block__heading{
-    justify-content: space-between;
-    display: flex;
-    width: 70%;
+.in-game-block__heading {
+  justify-content: space-between;
+  display: flex;
+  width: 70%;
 }
 
 .in-game-block__heading > * {
-    width: 5.5em;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    font-family: MC-font;
-    font-size: 20px;
-    color: $mc-brown;
+  width: 5.5em;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  font-family: MC-font;
+  font-size: 20px;
+  color: $mc-brown;
 }
 
 .in-game-block__heading > * > * {
-    display: flex;
-    font-size: 20px;
-    color: $mc-brown;
+  display: flex;
+  font-size: 20px;
+  color: $mc-brown;
+}
+
+.in-game-block__main {
+  display: contents;
+  height: 100%;
+  width: 100%;
 }

@@ -21,6 +21,7 @@
 html {
   height: 100%;
   width: 100%;
+  background-color: #b0cbff;
 }
 
 body {
@@ -31,6 +32,7 @@ body {
 button {
   height: 2.5em;
   width: 8em;
+  margin-bottom: 2em;
   border: 2px outset #828282;
   background-color: #828282;
   font-family: MC-font;
@@ -48,8 +50,10 @@ button:hover {
 }
 
 .App {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  padding-top: 1em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -110,6 +114,9 @@ button:hover {
 }
 
 .in-game-block {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -154,5 +161,11 @@ button:hover {
   display: flex;
   font-size: 20px;
   color: #794826;
+}
+
+.in-game-block__main {
+  display: contents;
+  height: 100%;
+  width: 100%;
 }
 /*# sourceMappingURL=App.css.map */
