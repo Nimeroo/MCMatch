@@ -1,4 +1,5 @@
 import React from "react";
+import "./GameResults.css"
 
 export const GameResults = ({
   gameMoves,
@@ -17,19 +18,21 @@ export const GameResults = ({
   };
 
   return (
-    <div>
-      <div>
+    <div className="game-results-block">
+      <div className="game-results-block__info">
         You found them all in {gameMoves} moves {timeSentence()}
       </div>
-      <button
+      <div className="game-results-block__buttons">
+        <button
         onClick={() => {
           setGameState("running");
           fetchItems();
         }}
       >
         Play Again
-      </button>
-      <button onClick={() => setGameState("off")}>Continue</button>
+        </button>
+        <button onClick={() => setGameState("off")}>Continue</button>
+      </div>
     </div>
   );
 };
