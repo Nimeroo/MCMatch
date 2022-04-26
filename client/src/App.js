@@ -17,6 +17,8 @@ function App() {
   const [itemList, setItemList] = useState([]);
   const [gameMoves, setGameMoves] = useState(0);
   const [gameTime, setGameTime] = useState("");
+  const [sortedBy, setSortedBy] = useState("");
+  const [sortList, setSortList] = useState(false);
 
   const fetchItems = () => {
     const items = gameConfig(gameItems, difficulty);
@@ -36,7 +38,9 @@ function App() {
   // Pre-game screen //
   const preGame = (
     <div className="pre-game-block">
-      <h1 className="pre-game-block__heading">Select a difficulty and start matching</h1>
+      <h1 className="pre-game-block__heading">
+        Select a difficulty and start matching
+      </h1>
       <DifficultySelector
         setDifficulty={setDifficulty}
         difficulty={difficulty}
@@ -77,7 +81,14 @@ function App() {
           newSession={newSession}
         />
       </div>
-      <button onClick={() => setGameState("off")}>Exit Game</button>
+      <button
+        onClick={() => {
+          setGameState("off");
+          setSortList(false);
+        }}
+      >
+        Exit Game
+      </button>
     </div>
   );
 
@@ -95,8 +106,23 @@ function App() {
   );
 
   const leaderboard = (
-    <div>
-      <GameLeaderboard setGameState={setGameState} />
+    <div
+      onClick={() =>
+        sortList === false ? setSortList(true) : setSortList(false)
+      }
+    >
+      Sort <img src="./Assets/big-chest.png"></img>
+      {sortList ? (
+        <ul>
+          <li onClick={() => setSortedBy("newest")}>Newest to Oldest</li>
+          <li onClick={() => setSortedBy("oldest")}>Oldest to Newest</li>
+          <li onClick={() => setSortedBy("bestTime")}>Best Time</li>
+          <li onClick={() => setSortedBy("worstTime")}>Worst Time</li>
+          <li onClick={() => setSortedBy("bestMoves")}>Least Moves</li>
+          <li onClick={() => setSortedBy("worstMoves")}>Most Moves</li>
+        </ul>
+      ) : null}
+      <GameLeaderboard setGameState={setGameState} sortedBy={sortedBy} />
       <button onClick={() => setGameState("off")}>Go back</button>
     </div>
   );

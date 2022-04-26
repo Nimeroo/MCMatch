@@ -1,13 +1,37 @@
 import React, { useState, useEffect } from "react";
 
-export const GameLeaderboard = ({ setGameState }) => {
+export const GameLeaderboard = ({ sortedBy }) => {
   const [gameData, setGameData] = useState([]);
 
   // fetches localstorage data //
   useEffect(() => {
-    const fetchData = localStorage.getItem("leaderboard");
-    setGameData(JSON.parse(fetchData));
-  }, []);
+    const dataSort = () => {
+      let sortedArray = JSON.parse(localStorage.getItem("leaderboard"));
+      switch (sortedBy) {
+        case "newest":
+          sortedArray = structuredClone(gameData);
+          break;
+        case "oldest":
+          sortedArray.reverse();
+          break;
+        case "bestTime":
+          sortedArray.sort((a, b) => parseInt(a.time[0] + a.time[1] + a.time[3] + a.time[4]) - parseInt(b.time[0] + b.time[1] + b.time[3] + b.time[4]));
+          break;
+        case "worstTime":
+          sortedArray.sort((a, b) => parseInt(b.time[0] + b.time[1] + b.time[3] + b.time[4]) - parseInt(a.time[0] + a.time[1] + a.time[3] + a.time[4]));
+          break;
+        case "bestMoves":
+          sortedArray.sort((a, b) => parseInt(a.moves) - parseInt(b.moves));
+          break;
+        case "worstMoves":
+          sortedArray.sort((a, b) => parseInt(b.moves) - parseInt(a.moves));
+        default:
+          break;
+      }
+      setGameData(sortedArray);
+    };
+    dataSort();
+  }, [sortedBy]);
 
   return (
     <div>
