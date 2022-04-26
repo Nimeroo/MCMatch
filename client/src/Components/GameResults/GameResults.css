@@ -1,0 +1,21 @@
+.game-results-block {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.game-results-block__info {
+  margin-bottom: 3em;
+  font-family: MC-font-bold;
+  font-size: 3em;
+  color: #794826;
+}
+
+.game-results-block__buttons {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=GameResults.css.map */
