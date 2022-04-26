@@ -17,8 +17,9 @@ const shuffle = (items) => {
 
 // items are duplicated to make pairs //
 const duplicate = (items) => {
-  const itemsCopy = [...items];
-  let newitems = items.concat(itemsCopy);
+  let itemsCopy = structuredClone(items)
+  itemsCopy.forEach((item) => (item.isDuplicate = true));
+  let newitems = [...items, ...itemsCopy];
   return newitems;
 };
 
