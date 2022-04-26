@@ -12,25 +12,34 @@ export const GameGrid = ({
   const [gridItems, setGridItems] = useState([]);
   const [selections, setSelections] = useState([]);
 
+  const selectedItemStyle = (item) => {
+    if (item.isMatched === true || selections.includes(item)) {
+      return "grid-block__uncovered";
+    } else return "grid-block__covered";
+  };
+
   // Pushes selected items into a seperate list. //
   // Once the seperate list contains at least 2 items both items are compared to check if they're matching //
   const matchChecker = (item, list) => {
     selections.push(item);
     setSelections(selections);
     if (selections.length === 2) {
-      if (selections[0].name === selections[1].name) {
+      if (selections[0] === selections[1]) {
+        selections.pop();
+        setSelections(selections);
+      } else if (selections[0].name === selections[1].name) {
         item.isMatched = true;
         list[list.indexOf(selections[0])].isMatched = true;
         setGameMoves(gameMoves + 1);
-        setSelections([]);
+        setTimeout(() => setSelections([]), 1000);
       } else {
         setGameMoves(gameMoves + 1);
-        setSelections([]);
+        setTimeout(() => setSelections([]), 1000);
       }
     }
     if (list.every((item) => item.isMatched === true)) {
       setGameCondition("complete");
-      newSession()
+      newSession();
       setGameState("results");
     } else {
       return;
@@ -39,7 +48,7 @@ export const GameGrid = ({
 
   useEffect(() => {
     setGameCondition("incomplete");
-    setGameMoves(0)
+    setGameMoves(0);
   }, []);
 
   useEffect(() => {
@@ -47,11 +56,10 @@ export const GameGrid = ({
   }, [itemList]);
 
   return (
-    <div className="grid-container">
+    <div className="grid-block">
       {gridItems.map((item) => {
         return (
           <div
-            className="item-container"
             onClick={() => {
               if (item.isMatched) {
                 return;
@@ -60,7 +68,14 @@ export const GameGrid = ({
               }
             }}
           >
-            <img className="item-image" src={item.image} alt={item.name}></img>
+            <div className={selectedItemStyle(item)}></div>
+            <div className="grid-block__item">
+              <img
+                className="grid-block__item__image"
+                src={item.image}
+                alt={item.name}
+              ></img>
+            </div>
           </div>
         );
       })}
