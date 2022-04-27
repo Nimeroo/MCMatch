@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./GameLeaderboard.css"
 
 export const GameLeaderboard = ({ sortedBy }) => {
   const [gameData, setGameData] = useState([]);
@@ -34,11 +35,11 @@ export const GameLeaderboard = ({ sortedBy }) => {
   }, [sortedBy]);
 
   return (
-    <div>
+    <div className="leaderboard-block">
       {gameData ? (
         gameData.map((session) => {
           return (
-            <div>
+            <div className="leaderboard-block__stats">
               <h2>{session.difficulty}</h2>
               <h4>{session.moves}</h4>
               <h4>{session.time}</h4>
