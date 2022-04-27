@@ -97,6 +97,7 @@ button:hover {
   opacity: 70%;
   font-family: MC-font-bold;
   color: whitesmoke;
+  text-align: center;
 }
 
 .pre-game-block__buttons {
