@@ -127,3 +127,70 @@ button:hover {
   height: 100%;
   width: 100%;
 }
+
+.records-block {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+
+.records-block__sorter {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 30%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: minecraft-evenings;
+  font-size: 20px;
+}
+
+.records-block__sorter__image{
+  height: 1em;
+  width: 2em;
+}
+
+.records-block__sorter__sort-list {
+  border: $difficulty-border;
+  margin: 0;
+  height: fit-content;
+  padding: 0;
+  list-style-type: none;
+  animation: grow 1s ease;
+}
+
+.records-block__sorter__sort-list > * {
+  border: 1px solid black;
+  background-image: url(Assets/oak-plank-block.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: MC-font;
+  animation: fade-in 2.5s ease;
+} 
+
+.records-block__leaderboard{
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes grow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 7.9em;
+  }
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
