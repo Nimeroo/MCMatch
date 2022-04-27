@@ -1,4 +1,5 @@
 import "./App.css";
+import bigChest from "./Assets/big-chest.png"
 import { useState } from "react";
 import { gameItems } from "./Util/gameItems";
 import { gameConfig } from "./Util/gameGenerator";
@@ -81,14 +82,7 @@ function App() {
           newSession={newSession}
         />
       </div>
-      <button
-        onClick={() => {
-          setGameState("off");
-          setSortList(false);
-        }}
-      >
-        Exit Game
-      </button>
+      <button onClick={() => setGameState("off")}>Exit Game</button>
     </div>
   );
 
@@ -106,24 +100,42 @@ function App() {
   );
 
   const leaderboard = (
-    <div
-      onClick={() =>
-        sortList === false ? setSortList(true) : setSortList(false)
-      }
-    >
-      Sort <img src="./Assets/big-chest.png"></img>
-      {sortList ? (
-        <ul>
-          <li onClick={() => setSortedBy("newest")}>Newest to Oldest</li>
-          <li onClick={() => setSortedBy("oldest")}>Oldest to Newest</li>
-          <li onClick={() => setSortedBy("bestTime")}>Best Time</li>
-          <li onClick={() => setSortedBy("worstTime")}>Worst Time</li>
-          <li onClick={() => setSortedBy("bestMoves")}>Least Moves</li>
-          <li onClick={() => setSortedBy("worstMoves")}>Most Moves</li>
-        </ul>
-      ) : null}
-      <GameLeaderboard setGameState={setGameState} sortedBy={sortedBy} />
-      <button onClick={() => setGameState("off")}>Go back</button>
+    <div className="records-block">
+      <button
+        className="records-block__sorter"
+        onClick={() =>
+          sortList === false ? setSortList(true) : setSortList(false)
+        }
+      >
+        Sort{" "}
+        {
+          <img
+            className="records-block__sorter__image"
+            src={bigChest}
+          ></img>
+        }
+        {sortList ? (
+          <ul className="records-block__sorter__sort-list">
+            <li onClick={() => setSortedBy("newest")}>Newest to Oldest</li>
+            <li onClick={() => setSortedBy("oldest")}>Oldest to Newest</li>
+            <li onClick={() => setSortedBy("bestTime")}>Best Time</li>
+            <li onClick={() => setSortedBy("worstTime")}>Worst Time</li>
+            <li onClick={() => setSortedBy("bestMoves")}>Least Moves</li>
+            <li onClick={() => setSortedBy("worstMoves")}>Most Moves</li>
+          </ul>
+        ) : null}
+      </button>
+      <div className="records-block__leaderboard">
+        <GameLeaderboard setGameState={setGameState} sortedBy={sortedBy} />
+        <button
+          onClick={() => {
+            setGameState("off");
+            setSortList(false);
+          }}
+        >
+          Go back
+        </button>
+      </div>
     </div>
   );
 
