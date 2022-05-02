@@ -21,13 +21,16 @@ export const GameGrid = ({
   // Pushes selected items into a seperate list. //
   // Once the seperate list contains at least 2 items both items are compared to check if they're matching //
   const matchChecker = (item, list) => {
-    selections.push(item);
+    if (selections.length === 0) {
+      selections.push(item);
+    } else if (selections.length === 2) {
+      return;
+    } else if (item !== selections[0]) {
+      selections.push(item);
+    } else return;
     setSelections(selections);
     if (selections.length === 2) {
-      if (selections[0] === selections[1]) {
-        selections.pop();
-        setSelections(selections);
-      } else if (selections[0].name === selections[1].name) {
+      if (selections[0].name === selections[1].name) {
         item.isMatched = true;
         list[list.indexOf(selections[0])].isMatched = true;
         setGameMoves(gameMoves + 1);
