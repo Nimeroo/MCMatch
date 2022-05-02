@@ -1,5 +1,5 @@
 import "./App.css";
-import bigChest from "./Assets/big-chest.png"
+import bigChest from "./Assets/big-chest.png";
 import { useState } from "react";
 import { gameItems } from "./Util/gameItems";
 import { gameConfig } from "./Util/gameGenerator";
@@ -101,19 +101,16 @@ function App() {
 
   const leaderboard = (
     <div className="records-block">
-      <button
-        className="records-block__sorter"
-        onClick={() =>
-          sortList === false ? setSortList(true) : setSortList(false)
-        }
-      >
-        Sort{" "}
-        {
-          <img
-            className="records-block__sorter__image"
-            src={bigChest}
-          ></img>
-        }
+      <div className="records-block__sorter">
+        <button
+          className="records-block__sorter__button"
+          onClick={() =>
+            sortList === false ? setSortList(true) : setSortList(false)
+          }
+        >
+          Sort
+          {<img className="records-block__sorter__image" src={bigChest}></img>}
+        </button>
         {sortList ? (
           <ul className="records-block__sorter__sort-list">
             <li onClick={() => setSortedBy("newest")}>Newest to Oldest</li>
@@ -124,7 +121,7 @@ function App() {
             <li onClick={() => setSortedBy("worstMoves")}>Most Moves</li>
           </ul>
         ) : null}
-      </button>
+      </div>
       <div className="records-block__leaderboard">
         <GameLeaderboard setGameState={setGameState} sortedBy={sortedBy} />
         <button
