@@ -1,153 +1,177 @@
 @import "../../Util/styleVariables";
 
-.difficulties{
-    justify-content: space-evenly;
-    align-items: center;
-    display: flex;
-    height: 25rem;
-    width: 90%;
+.difficulties {
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  height: 50vh;
+  width: 90%;
 }
 
-.difficulties__card-easy{
-    justify-content: center;
-    align-items: center;
+.difficulties__card-easy {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: $difficulty-width;
+  height: $difficulty-height;
+  border: $ridge-border;
+  text-align: center;
+  background-image: url(../../Assets/dirt-block.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-easy--selected {
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: $difficulty-width;
+  height: $difficulty-height;
+  border: $selected-difficulty-border;
+  text-align: center;
+  background-image: url(../../Assets/dirt-block.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-easy--selected > div {
+  height: 9em;
+  width: 110%;
+  border: 1px solid gold;
+  transition: 0.5s;
+}
+
+.difficulties__card-easy--selected > * > * {
+  font-size: 25px;
+  transition: 0.5s;
+}
+
+.difficulties__card-intermediate {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: $difficulty-width;
+  height: $difficulty-height;
+  border: $ridge-border;
+  text-align: center;
+  background-image: url(../../Assets/iron-block.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-intermediate--selected {
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: $difficulty-width;
+  height: $difficulty-height;
+  border: $selected-difficulty-border;
+  text-align: center;
+  background-image: url(../../Assets/iron-block.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-intermediate--selected > div {
+  height: 9em;
+  width: 110%;
+  border: 1px solid gold;
+  transition: 0.5s;
+}
+
+.difficulties__card-intermediate--selected > * > * {
+  font-size: 25px;
+  transition: 0.5s;
+}
+
+.difficulties__card-hard {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: $difficulty-width;
+  height: $difficulty-height;
+  border: $ridge-border;
+  text-align: center;
+  background-image: url(../../Assets/obsidian-block.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-hard--selected {
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: $difficulty-width;
+  height: $difficulty-height;
+  border: $selected-difficulty-border;
+  text-align: center;
+  background-image: url(../../Assets/obsidian-block.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card-hard--selected > div {
+  height: 9em;
+  width: 110%;
+  border: 1px solid gold;
+  transition: 0.5s;
+}
+
+.difficulties__card-hard--selected > * > * {
+  font-size: 25px;
+  transition: 0.5s;
+}
+
+.difficulties__card__container {
+  height: 7.5em;
+  width: 90%;
+  border: 1px solid darkgray;
+  background-image: url(../../Assets/oak-plank-block.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.difficulties__card__title {
+  font-family: MC-font-bold;
+}
+
+.difficulties__card__note {
+  font-family: MC-font-italic;
+}
+
+@media only screen and (max-width: 600px) {
+  .difficulties {
     flex-direction: column;
-    display: flex;
-    width: $difficulty-width;
-    height: $difficulty-height;
-    border: $difficulty-border;
-    text-align: center;
-    background-image: url(../../Assets/dirt-block.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  }
+  .difficulties__card__container{
+      width: 70%;
+  }
 }
 
-.difficulties__card-easy--selected{
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    width: $difficulty-width;
-    height: $difficulty-height;
-    border: $selected-difficulty-border;
-    text-align: center;
-    background-image: url(../../Assets/dirt-block.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+@media only screen and (max-width: 400px) {
+  .difficulties__card__title {
+    font-size: 17px;
+  }
 }
 
-.difficulties__card-intermediate{
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    width: $difficulty-width;
-    height: $difficulty-height;
-    border: $difficulty-border;
-    text-align: center;
-    background-image: url(../../Assets/iron-block.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.difficulties__card-easy--selected > div{
-    height: 9em;
-    width: 110%;
-    border: 1px solid gold;
-    transition: 0.5s;
-}
-
-.difficulties__card-easy--selected > * > *{
-    font-size: 25px;
-    transition: 0.5s;
-}
-
-.difficulties__card-intermediate--selected{
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    width: $difficulty-width;
-    height: $difficulty-height;
-    border: $selected-difficulty-border;
-    text-align: center;
-    background-image: url(../../Assets/iron-block.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.difficulties__card-intermediate--selected > div{
-    height: 9em;
-    width: 110%;
-    border: 1px solid gold;
-    transition: 0.5s;
-}
-
-.difficulties__card-intermediate--selected > * > *{
-    font-size: 25px;
-    transition: 0.5s;
-}
-
-.difficulties__card-hard{
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    width: $difficulty-width;
-    height: $difficulty-height;
-    border: $difficulty-border;
-    text-align: center;
-    background-image: url(../../Assets/obsidian-block.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.difficulties__card-hard--selected{
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    width: $difficulty-width;
-    height: $difficulty-height;
-    border: $selected-difficulty-border;
-    text-align: center;
-    background-image: url(../../Assets/obsidian-block.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.difficulties__card-hard--selected > div{
-    height: 9em;
-    width: 110%;
-    border: 1px solid gold;
-    transition: 0.5s;
-}
-
-.difficulties__card-hard--selected > * > *{
-    font-size: 25px;
-    transition: 0.5s;
-}
-
-.difficulties__card__container{
-    height: 7.5em;
-    width: 90%;
-    border: 1px solid darkgray;
-    background-image: url(../../Assets/oak-plank-block.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.difficulties__card__title{
-    font-family: MC-font-bold;
-}
-
-.difficulties__card__note{
-    font-family: MC-font-italic;
+@media only screen and (max-width: 375px) {
+  .difficulties__card__title {
+    font-size: 12px;
+  }
 }
