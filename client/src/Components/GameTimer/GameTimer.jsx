@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./GameTimer.css"
 
 export const GameTimer = ({ gameState, setGameTime, gameCondition }) => {
   let [seconds, setSeconds] = useState("00");
@@ -37,7 +38,7 @@ export const GameTimer = ({ gameState, setGameTime, gameCondition }) => {
   }, [gameState, totalSeconds]);
 
   return (
-    <div>
+    <div className="timer-block">
       <h5>Time:</h5>
       <div>
         <div>{minutes}:</div>
