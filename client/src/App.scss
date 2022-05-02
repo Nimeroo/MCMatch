@@ -21,13 +21,15 @@
 }
 
 html {
-  height: 100%;
-  width: 100%;
-  background-color: #b0cbff;
+  align-items: center;
+  display: flex;
+  min-height: 100%;
+  max-width: 100%;
+  background-image: url(Assets/dirt-block.jpeg);
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -47,7 +49,7 @@ button:hover {
 }
 
 #root {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -57,13 +59,8 @@ button:hover {
   align-items: center;
   flex-direction: column;
   display: flex;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
-  background-color: lightblue;
-  background-image: url(Assets/background-clouds.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .game-block {
@@ -77,10 +74,14 @@ button:hover {
   display: flex;
   height: inherit;
   width: inherit;
+  background-image: url(Assets/default-background.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .pre-game-block__heading {
-  opacity: 70%;
+  opacity: 90%;
   font-family: MC-font-bold;
   color: whitesmoke;
   text-align: center;
@@ -90,7 +91,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   display: flex;
-  margin-top: 3em;
+  margin-top: 1em;
   width: 20rem;
 }
 
@@ -99,19 +100,26 @@ button:hover {
   align-items: center;
   flex-direction: column;
   display: flex;
+  background-image: url(Assets/default-background.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .in-game-block__heading {
   justify-content: space-between;
+  align-items: center;
   display: flex;
   width: 70%;
 }
 
 .in-game-block__heading > * {
   width: 5.5em;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   display: flex;
+  border: $ridge-border;
+  background-image: url(Assets/stone-top.jpg);
   font-family: MC-font;
   font-size: 20px;
   color: $mc-brown;
@@ -121,6 +129,11 @@ button:hover {
   display: flex;
   font-size: 20px;
   color: $mc-brown;
+}
+
+.in-game-block__heading > h5:hover {
+  color: gold;
+  transition: 1s;
 }
 
 .in-game-block__main {
@@ -134,32 +147,42 @@ button:hover {
   flex-direction: column;
   display: flex;
   width: 100%;
+  background-image: url(Assets/default-background.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .records-block__sorter {
   flex-direction: column;
   align-items: center;
   display: flex;
+  height: 30%;
   width: 30%;
+  margin-top: 1em;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  font-family: minecraft-evenings;
   font-size: 20px;
 }
 
-.records-block__sorter__image{
+.records-block__sorter__button {
+  margin-bottom: 0%;
+  font-family: minecraft-evenings;
+}
+
+.records-block__sorter__image {
   height: 1em;
   width: 2em;
 }
 
 .records-block__sorter__sort-list {
-  border: $difficulty-border;
+  border: $ridge-border;
   margin: 0;
-  height: fit-content;
   padding: 0;
   list-style-type: none;
-  animation: grow 1s ease;
+  animation: grow 1s ease-in;
+  text-align: center;
 }
 
 .records-block__sorter__sort-list > * {
@@ -169,23 +192,25 @@ button:hover {
   background-position: center;
   background-size: cover;
   font-family: MC-font;
-  animation: fade-in 2.5s ease;
-} 
+  color: whitesmoke;
+  animation: fade-in 2s ease;
+}
 
-.records-block__leaderboard{
+.records-block__leaderboard {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
   width: 100%;
-  text-align: center;
 }
 
 @keyframes grow {
-  0% {
-    height: 0;
+  from {
+    max-height: 0px;
   }
-  100% {
-    height: 7.9em;
+  to {
+    max-height: 500px;
   }
 }
-
 
 @keyframes fade-in {
   0% {
@@ -193,5 +218,11 @@ button:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    min-height: 1vh;
   }
 }
