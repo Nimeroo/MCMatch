@@ -1,0 +1,13 @@
+@import "../../Util/styleVariables";
+
+.timer-block{
+    height: 24px;
+    align-items: center;
+    justify-content: space-between;
+    border: $ridge-border;
+}
+
+.timer-block:hover > *{
+    color: gold;
+    transition: 1s;
+}

@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AAAA,YAAY,CAAA;EACR,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,aAAa;EAC9B,MAAM,ECFK,GAAG,CAAC,KAAK,CAAC,IAAI;CDG5B;;AAED,AAAA,YAAY,AAAA,MAAM,GAAG,CAAC,CAAA;EAClB,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,EAAE;CACjB",
     "sources": [
-        "GameTimer.scss"
+        "GameTimer.scss",
+        "../../Util/_styleVariables.scss"
     ],
     "names": [],
     "file": "GameTimer.css"
