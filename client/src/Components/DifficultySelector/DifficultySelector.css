@@ -225,6 +225,8 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
   .difficulties__card__container {
     width: 70%;
