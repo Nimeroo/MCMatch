@@ -2,14 +2,23 @@
 
 .game-results-block{
     margin-top: 3em;
+    border: $ridge-border;
     text-align: center;
+    background-image: url(../../Assets/stone-top.jpg);
+    background-color: gray;
 }
 
 .game-results-block__info{
-    margin-bottom: 3em;
-    font-family: MC-font-bold;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-family: minecraft-evenings;
     font-size: 3em;
     color: $mc-brown;
+}
+
+.game-results-block__info:hover{
+    color: gold;
+    transition: 1s;
 }
 
 .game-results-block__buttons{
