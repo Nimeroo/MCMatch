@@ -1,5 +1,5 @@
 .title {
-  font-size: 100px;
+  font-size: clamp(70px, 5rem, 100px);
   font-family: minecraft-evenings;
   color: gray;
   text-shadow: -1px 1px 0 black, 1px 1px 0 black, 1px -1px 0 black, -1px -1px 0 black;
