@@ -26,13 +26,14 @@ export const GameLeaderboard = ({ sortedBy }) => {
           break;
         case "worstMoves":
           sortedArray.sort((a, b) => parseInt(b.moves) - parseInt(a.moves));
+          break;
         default:
           break;
       }
       setGameData(sortedArray);
     };
     dataSort();
-  }, [sortedBy]);
+  }, [sortedBy, gameData]);
 
   return (
     <div className="leaderboard-block">

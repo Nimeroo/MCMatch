@@ -109,7 +109,7 @@ function App() {
           }
         >
           Sort
-          {<img className="records-block__sorter__image" src={bigChest}></img>}
+          {<img className="records-block__sorter__image" src={bigChest} alt="chest"></img>}
         </button>
         {sortList ? (
           <ul className="records-block__sorter__sort-list">

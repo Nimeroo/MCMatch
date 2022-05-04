@@ -7,6 +7,7 @@ export const GameTimer = ({ gameState, setGameTime, gameCondition }) => {
   let [totalSeconds, setTotalSeconds] = useState(0);
   let timer;
 
+
   const setTimer = () => {
     setTotalSeconds(++totalSeconds);
     setSeconds(timeFormater(totalSeconds % 60));
