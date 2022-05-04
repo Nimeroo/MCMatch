@@ -105,7 +105,7 @@ function App() {
         <button
           className="records-block__sorter__button"
           onClick={() =>
-            sortList === false ? setSortList(true) : setSortList(false)
+            JSON.parse(localStorage.getItem("leaderboard")).length > 0 && sortList === false ? setSortList(true) : setSortList(false)
           }
         >
           Sort
